@@ -20,23 +20,24 @@ So that I can add an entry and read/get entries
 
 # So that no one can add an entry or read/get the entries
 
-|Object        |Properties            |Messages          |Outputs   |
-|--------------|----------------------|------------------|----------|
-|secretDiary   |entries@[entry]       |addEntry()        |@void     |
-|              |                      |getEntries()      |@[entries]|
-|              |lock(@Boolean)        |lockOn()          |@Boolean  |      //if lock is True, diary is locked and no access
-|              |//unlock(@Boolean)    |                  |          |      //if lock is False, diary is unlocked and can get entries or
-|              |                      |                  |          |      // add entry
-|              |                      |                  |          |
-|entry         |post@String           |addEntry()        |@void     |
+| Object      | Properties         | Messages     | Outputs    |
+| ----------- | ------------------ | ------------ | ---------- | ------------------------------------------------------------ |
+| secretDiary | entries@[entry]    | addEntry()   | @void      |
+|             |                    | getEntries() | @[entries] |
+|             | lock(@Boolean)     | lockOn()     | @Boolean   | //if lock is True, diary is locked and no access             |
+|             | //unlock(@Boolean) |              |            | //if lock is False, diary is unlocked and can get entries or |
+|             |                    |              |            | // add entry                                                 |
+|             |                    |              |            |
+| entry       | post@String        | addEntry()   | @void      |
 
+\*\*should lock be a message not parameter
 SecretDiary
 
 - lock()
 - unlock()
 - addEntry()
 - getEntries()
-Diagram the secret diary example, and then implement the following requirements:
+  Diagram the secret diary example, and then implement the following requirements:
 
 Initially the SecretDiary class is locked, meaning addEntry(str) and getEntries() should throw an error.
 When the user calls unlock(), addEntry() and getEntries() should work as desired.
