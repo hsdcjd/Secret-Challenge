@@ -1,6 +1,5 @@
 # Secret-Challenge
 
-
 User Stories
 
 As a secret diary user
@@ -15,28 +14,28 @@ As a secret diary user
 I want to be able to unlock is
 So that I can add an entry and read/get entries
 
-#As a secret diary user
-#I want to prevent/lock it
-#So that no one can add an entry or read/get the entries
+# As a secret diary user
 
+# I want to prevent/lock it
 
-Object        Properties            Messages          Outputs
-secretDiary   entries@[entry]       addEntry()        @void
-                                    getEntries()      @[entries]
-              
-              lock(@Boolean)        lockOn()          @Boolean        //if lock is True, diary is locked and no access
-              //unlock(@Boolean)                                      //if lock is False, diary is unlocked and can get entries or add entry
-              
-entry         post@String           addEntry()        @void
+# So that no one can add an entry or read/get the entries
 
-
-
+|Object        |Properties            |Messages          |Outputs   |
+|--------------|----------------------|------------------|----------|
+|secretDiary   |entries@[entry]       |addEntry()        |@void     |
+|              |                      |getEntries()      |@[entries]|
+|              |lock(@Boolean)        |lockOn()          |@Boolean  |      //if lock is True, diary is locked and no access
+|              |//unlock(@Boolean)    |                  |          |      //if lock is False, diary is unlocked and can get entries or
+|              |                      |                  |          |      // add entry
+|              |                      |                  |          |
+|entry         |post@String           |addEntry()        |@void     |
 
 SecretDiary
-  - lock()
-  - unlock()
-  - addEntry()
-  - getEntries()
+
+- lock()
+- unlock()
+- addEntry()
+- getEntries()
 Diagram the secret diary example, and then implement the following requirements:
 
 Initially the SecretDiary class is locked, meaning addEntry(str) and getEntries() should throw an error.
