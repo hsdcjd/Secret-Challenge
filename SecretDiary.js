@@ -1,22 +1,32 @@
+const Entry = require(`./Entry`);
+
 class SecretDiary {
 
-    #lock = true;
+  #locked = false;
+  entry = new Entry();
 
-    getLock() {
-        return this.#lock;
+  addEntry(entry) {
+    if (this.#locked === false) { 
+      this.entry.add(entry);
+    } else {
+      console.log('Cannot add entry: diary is locked');
     }
-    //call it isLocked?
-    unlock() {
-        this.#lock = false;
+  }
+  getEntries() {
+    if (this.#locked === false) {
+      return this.entry.get();
+    } else {
+      console.log('Cannot get entries: diary is locked');
     }
-    lock() {
-        this.#lock = true;
+  }
+  lock() {
+    this.#locked = true;
+  }
+  unlock() {
+    this.#locked = false;
+  }
+  isLocked() {
+        return this.#locked;
     }
 }
-
 module.exports = SecretDiary;
-
-/*
-This code defines a class in JavaScript called SecretDiary that contains methods for locking and unlocking a diary. The getLock() method returns the current lock status, the unlock() method unlocks the diary, and the lock() method locks the diary. These methods are useful for protecting the contents of the diary from being accessed by unauthorized users. */
-
-//our diary does not encapsulate an entry so no cohesion.
