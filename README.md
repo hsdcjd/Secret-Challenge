@@ -4,7 +4,7 @@ User Stories
 
 As a secret diary user
 I want to prevent/lock it
-So that no one can add an entry
+So that no one can add an entry # yes this is complete and passed
 
 As a secret diary user
 I want to prevent/lock it
@@ -14,11 +14,9 @@ As a secret diary user
 I want to be able to unlock is
 So that I can add an entry and read/get entries
 
-# As a secret diary user
-
-# I want to prevent/lock it
-
-# So that no one can add an entry or read/get the entries
+As a secret diary user
+I want to prevent/lock it
+So that no one can add an entry or read/get the entries
 
 | Object      | Properties         | Messages     | Outputs    |
 | ----------- | ------------------ | ------------ | ---------- | ------------------------------------------------------------ |

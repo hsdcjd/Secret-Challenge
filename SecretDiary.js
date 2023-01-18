@@ -26,7 +26,7 @@ class SecretDiary {
     this.#locked = false;
   }
   isLocked() {
-        return this.#locked;
-    }
+    return this.#locked;
+  }
 }
 module.exports = SecretDiary;
